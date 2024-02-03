@@ -43,7 +43,7 @@ import java.util.Optional;
             Optional<Client> clientOptional = clientService.findById(id);
             if (clientOptional.isPresent()) {
                 Client client = clientOptional.get();
-                client.setFullName_client(updatedClient.getFullName_client());
+                client.setName(updatedClient.getName());
                 client.setEmail(updatedClient.getEmail());
                 clientService.save(client);
 

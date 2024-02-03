@@ -12,20 +12,15 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "workout")
 public class Workout {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String description;
+
     private String level;
-
-    @JsonBackReference
-    @ManyToMany(mappedBy = "workouts")
-    private List<Exercise> exercises = new ArrayList<>();
-
-
-    @ManyToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "id_client")
-    private Client client;
 }

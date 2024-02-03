@@ -32,7 +32,7 @@ public class ExerciseController {
         }
     }
 
-    @PostMapping
+    @PostMapping(value = "/", consumes = {"application/json"})
     @ResponseStatus(HttpStatus.CREATED)
     public Exercise createExercise(@RequestBody Exercise exercise) {
         return exerciseService.save(exercise);
@@ -44,7 +44,6 @@ public class ExerciseController {
         if (exerciseOptional.isPresent()) {
             Exercise exercise = exerciseOptional.get();
             exercise.setName(updatedExercise.getName());
-            exercise.setTypeExercise(updatedExercise.getTypeExercise());
             exerciseService.save(exercise);
 
             return ResponseEntity.ok(exercise);

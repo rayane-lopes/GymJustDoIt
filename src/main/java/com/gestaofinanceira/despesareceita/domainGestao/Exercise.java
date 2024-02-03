@@ -19,22 +19,6 @@ public class Exercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
     private String name;
-
-
-    @ManyToOne
-    @JoinColumn(name = "exercise_id", referencedColumnName = "id")
-    private TypeExercise typeExercise;
-
-
-    @ManyToMany
-    @JsonManagedReference
-    @JoinTable(
-            name = "workout_exercise",
-            joinColumns = @JoinColumn(name = "exercise_id"),
-            inverseJoinColumns = @JoinColumn(name = "workout_id")
-    )
-    private List<Workout> workouts = new ArrayList<>();
 
 }

@@ -45,8 +45,6 @@ public class WorkoutController {
             workout.setName(updatedWorkout.getName());
             workout.setDescription(updatedWorkout.getDescription());
             workout.setLevel(updatedWorkout.getLevel());
-            workout.setExercises(updatedWorkout.getExercises());
-            workout.setClient(updatedWorkout.getClient());
             workout.setId(updatedWorkout.getId());
             workoutService.save(workout);
 
